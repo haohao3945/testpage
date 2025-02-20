@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Apps Script API Test</title>
+</head>
+<body>
+    <h2>Google Apps Script API Test</h2>
+    <button onclick="callApi()">Test API</button>
+    <p id="output"></p>
+
+    <script>
+        function callApi() {
+            fetch(https://script.google.com/macros/s/AKfycbwaSK5V9Zuls1YhQaIj4pEac-_nvapDrJdCOYGxDPZrRiyPZh4jZmfg384m9MDwbv7Chg/exec')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("output").innerText = "Response: " + data;
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById("output").innerText = "Error calling API.";
+                });
+        }
+    </script>
+</body>
+</html>
